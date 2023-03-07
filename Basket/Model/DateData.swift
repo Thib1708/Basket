@@ -7,4 +7,4 @@
 
 import Foundation
 
-var date: [Date] = load("dateData.json")
+//var date: [Date] = load("dateData.json")

@@ -10,16 +10,54 @@ import SwiftUI
 struct RankingView: View {
     private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
 
-    private var sortedclub: [Club] {
-        club.sorted { $0.rank < $1.rank }
-    }
+    @StateObject private var viewModel = ClubViewModel()
+//    private var sortedclub: [Club] {
+//        viewModel.club.sorted { $0.rank < $1.rank }
+//    }
     var body: some View {
         if UIDevice.current.userInterfaceIdiom == .phone {
             VStack {
                 RankTitle()
                 Divider()
-                ForEach(sortedclub) { sortedclub in
-                    RankRow(club: sortedclub)
+                ForEach(viewModel.clubs) { club in
+                    HStack{
+                        Text(club.name)
+                            .multilineTextAlignment(.leading)
+                            .frame(width: UIScreen.main.bounds.height * (0.20))
+                            .font(.system(size: 7))
+                        Text(club.pts)
+                            .multilineTextAlignment(.leading)
+                            .frame(width: UIScreen.main.bounds.height * (0.02))
+                            .font(.system(size: 7))
+                        Text(club.play)
+                            .multilineTextAlignment(.leading)
+                            .frame(width: UIScreen.main.bounds.height * (0.02))
+                            .font(.system(size: 7))
+                        Text(club.win)
+                            .multilineTextAlignment(.leading)
+                            .frame(width: UIScreen.main.bounds.height * (0.02))
+                            .font(.system(size: 7))
+                        Text(club.loose)
+                            .multilineTextAlignment(.leading)
+                            .frame(width: UIScreen.main.bounds.height * (0.02))
+                            .font(.system(size: 7))
+                        Text(club.null)
+                            .multilineTextAlignment(.leading)
+                            .frame(width: UIScreen.main.bounds.height * (0.02))
+                            .font(.system(size: 7))
+                        Text(club.scored)
+                            .multilineTextAlignment(.leading)
+                            .frame(width: UIScreen.main.bounds.height * (0.02))
+                            .font(.system(size: 7))
+                        Text(club.taken)
+                            .multilineTextAlignment(.leading)
+                            .frame(width: UIScreen.main.bounds.height * (0.02))
+                            .font(.system(size: 7))
+                        Text(club.diff)
+                            .multilineTextAlignment(.leading)
+                            .frame(width: UIScreen.main.bounds.height * (0.02))
+                            .font(.system(size: 7))
+                    }
                     Divider()
                 }
             }
@@ -27,7 +65,7 @@ struct RankingView: View {
         else {
             VStack {
                 Spacer()
-                Table(club) {
+                Table(viewModel.clubs) {
                     TableColumn("Equipe", value: \.name)
                         .width(UIScreen.main.bounds.height * (0.25))
                     TableColumn("Pts", value: \.pts)

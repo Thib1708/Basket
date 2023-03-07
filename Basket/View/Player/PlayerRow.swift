@@ -7,27 +7,28 @@
 
 import SwiftUI
 
-struct PlayerRow: View {
-    var basket: Basket
-    
-    var body: some View {
-        HStack {
-            basket.image
-                .resizable()
-                .frame(width: 35, height: 50)
-            Text(basket.name)
-            
-            Spacer()
-        }
-    }
-}
+//struct PlayerRow: View {
+//    var player: Player
+//    
+//    var body: some View {
+//        HStack {
+//            player.image
+//                .resizable()
+//                .frame(width: 35, height: 50)
+//            Text(player.name)
+//            
+//            Spacer()
+//        }
+//    }
+//}
 
-struct PlayerRow_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            PlayerRow(basket: basket[6])
-            PlayerRow(basket: basket[7])
-        }
-            .previewLayout(.fixed(width: 300, height: 70))
-    }
-}
+//struct PlayerRow_Previews: PreviewProvider {
+//    @StateObject private var viewModel = PlayerViewModel()
+//    static var previews: some View {
+//        Group {
+//            PlayerRow(player: viewModel.players[6])
+//            PlayerRow(player: viewModel.players[7])
+//        }
+//            .previewLayout(.fixed(width: 300, height: 70))
+//    }
+//}

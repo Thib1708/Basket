@@ -7,4 +7,4 @@
 
 import Foundation
 
-var club: [Club] = load("clubData.json")
+//var club: [Club] = load("clubData.json")

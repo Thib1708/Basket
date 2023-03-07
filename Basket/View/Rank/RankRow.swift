@@ -51,8 +51,8 @@ struct RankRow: View {
     }
 }
 
-struct RankRow_Previews: PreviewProvider {
-    static var previews: some View {
-        RankRow(club: club[5])
-    }
-}
+//struct RankRow_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RankRow(club: club[5])
+//    }
+//}

@@ -1,5 +1,5 @@
 //
-//  Basket.swift
+//  Player.swift
 //  Basket
 //
 //  Created by Thibault Giraudon on 27/02/2023.
@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Basket: Hashable, Codable, Identifiable {
+struct Player: Hashable, Codable, Identifiable {
     var id: Int
     var name: String
     var total_scored: String

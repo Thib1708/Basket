@@ -36,8 +36,9 @@ struct CalendarRow: View {
     }
 }
 
-struct CalendarRow_Previews: PreviewProvider {
-    static var previews: some View {
-        CalendarRow(date: date[1])
-    }
-}
+//struct CalendarRow_Previews: PreviewProvider {
+//    @StateObject private var date = DateViewModel()
+//    static var previews: some View {
+//        CalendarRow(date: date[1])
+//    }
+//}
